@@ -1,0 +1,49 @@
+POSTED TEXT, VERBATIM, WITH assets/x-post-card.png ATTACHED TO THE POST
+
+The block between the dashed rulers below is the whole of the post's text: paste it into X as it
+stands, with the picture attached to the post itself. Nothing in this file is part of the post.
+
+--------------------------------------------------------------------------------------------
+AI + crypto is loud. @crisxai5 cuts through it: AI agents, crypto markets, Web3 tooling, no moon
+talk, receipts over vibes. One feed, must-follow:
+https://x.com/crisxai5
+#AI #Crypto #AIAgents #Web3
+makefun-REPLACE-WITH-YOUR-PLAY-CODE
+--------------------------------------------------------------------------------------------
+
+Between the rulers, in order: the mention, the profile url, four hashtags, one play code.
+Replace the last line with one of this account's real play codes and nothing else.
+
+Every element the rules name, and where it comes from:
+
+  @crisxai5                   the sponsor's mention, as written, as a whole word (RULES.txt,
+                              "The task"). Capitalisation is free; a mention inside a longer
+                              word is not.
+  https://x.com/crisxai5      the profile url the brief asks the post to carry.
+  #AI #Crypto #AIAgents #Web3 four relevant hashtags, inside the 3-5 the brief wants.
+  makefun-...                 one play code: "makefun-" and three words, as it stands.
+  assets/x-post-card.png      the picture, made in this session, attached to the post itself.
+
+Before posting: fill the play code. The four codes for this account are not secrets and are not
+guessable, and registration is what mints them. With the CLI that owns this repository:
+
+    node .../kit/cli/makefun.mjs reward --competition u-tina-spotlight-crisxai5-ai-crypto-expert-on-x-7c1ed9ad --keypair /home/ubuntu/makefun-keypair.json
+
+or, over the API, GET /api/competitions/u-tina-spotlight-crisxai5-ai-crypto-expert-on-x-7c1ed9ad/play-code
+with no query (or ?n=0) for the first code and ?n=1, ?n=2, ?n=3 for the other three. Any one of
+them passes. Never post the placeholder: the gate needs a real code in the post's own text.
+
+Then, in this repository's POST.json at the root, replace the starter placeholder with the post's
+own address, taken from Share, then Copy link:
+
+    {"url": "https://x.com/<handle>/status/<id>"}
+
+Check the address's shape before handing it over -- main.ts prints a warning on stderr if it is the
+placeholder or has some other shape, and hands it over regardless:
+
+    mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
+
+Keep the post up and the account public until the results are out (RULES.txt, "The gate" and
+"The counts"): a post that is deleted or made private scores 0, and the counts are read after the
+deadline through FxTwitter. Engagement that was bought, botted or chased through a pod is
+disqualification, not points (RULES.txt, "The line").

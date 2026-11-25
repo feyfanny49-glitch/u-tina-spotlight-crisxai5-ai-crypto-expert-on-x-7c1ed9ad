@@ -1,0 +1,6 @@
+# the grader's own scratch: it writes /output itself
+out/
+# python bytecode from the tools
+__pycache__/
+*.pyc
+*.tmp
